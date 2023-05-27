@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { HomeFilled, ShoppingCartOutlined } from "@ant-design/icons";
+import { getCart } from "../../API/Api";
 import {
     Badge,
     Button,
@@ -26,10 +28,10 @@ const Header = () => {
         onClick={onMenuClick}
         mode="horizontal"
         items={[
-        //   {
-        //     label: <HomeFilled />,
-        //     key: "",
-        //   },
+          {
+            label: <HomeFilled />,
+            key: "",
+          },
           {
             label: "Men",
             key: "men",
@@ -90,9 +92,9 @@ function AppCart() {
   const [checkoutDrawerOpen, setCheckoutDrawerOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   useEffect(() => {
-    // getCart().then((res) => {
-    //   setCartItems(res.products);
-    // });
+    getCart().then((res) => {
+      setCartItems(res.products);
+    });
   }, []);
   const onConfirmOrder = (values) => {
     console.log({ values });
@@ -110,7 +112,7 @@ function AppCart() {
         count={cartItems.length}
         className="soppingCartIcon"
       >
-        {/* <ShoppingCartOutlined /> */}
+        <ShoppingCartOutlined />
       </Badge>
       <Drawer
         open={cartDrawerOpen}
