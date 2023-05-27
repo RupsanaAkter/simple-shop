@@ -1,15 +1,14 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import Home from '../components/Home/Home';
+import { Route,Routes } from 'react-router-dom';
+
 import Category from '../components/Category/Category';
 
-const Routes = () => {
-    return (
-        <Routes>
-      <Route path="/" element={<Home />}></Route>
+function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Category />}></Route>
       <Route path="/:categoryId" element={<Category />}></Route>
     </Routes>
-    );
-};
-
-export default Routes;
+  );
+}
+export default AppRoutes;
