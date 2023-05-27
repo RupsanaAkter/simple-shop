@@ -80,7 +80,7 @@ const Header = () => {
           },
         ]}
       />
-      <Typography.Title>Aamir Store</Typography.Title>
+      <Typography.Title>Rup Shop</Typography.Title>
       <AppCart />
     </div>
   );
