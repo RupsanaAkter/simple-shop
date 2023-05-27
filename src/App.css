@@ -35,3 +35,10 @@
   overflow-y: auto;
   margin-top: 2px;
 }
+.itemCard, .itemCardBadge{
+  margin: 8px;
+}
+.itemCardImage{
+  height: 150px !important;
+  object-fit: scale-down;
+}
